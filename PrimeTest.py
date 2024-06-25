@@ -1,3 +1,5 @@
+import time
+
 def is_prime(num):
   """
   This function checks if a number is prime.
@@ -33,7 +35,12 @@ def find_primes(last_number):
 
 
 last_number = 100000000#The number to input into find_primes
+
+start_time = time.time()  # Record start time
 primes = find_primes(last_number)
+end_time = time.time()  # Record end time
+elapsed_time = end_time - start_time #Computer difference between start time and end time
 numberofprimes = len(primes)
 print("Prime numbers found between 1 and", last_number, "are:", primes)
 print("A total of ", numberofprimes, " prime numbers were found between 1 and ", last_number, ".")
+print(f"Found {numberofprimes} prime numbers in {elapsed_time:.2f} seconds.")
